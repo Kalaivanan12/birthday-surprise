@@ -1,0 +1,159 @@
+/* ==========================================================================
+   TIMELINE SECTION STYLING (WHITE & PURPLE THEME)
+   ========================================================================== */
+
+.timeline-section {
+  position: relative;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 50px auto 0;
+  padding: 20px 0;
+}
+
+/* Center glowing spine */
+.timeline-center-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(180deg, transparent 0%, var(--pink) 15%, var(--dark-red) 85%, transparent 100%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.2, 1, 0.3, 1), transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.timeline-left {
+  justify-content: flex-start;
+  padding-right: calc(50% + 40px);
+  transform: translateX(-40px);
+}
+
+.timeline-right {
+  justify-content: flex-end;
+  padding-left: calc(50% + 40px);
+  transform: translateX(40px);
+}
+
+.timeline-item.timeline-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Center node pin */
+.timeline-node {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.node-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.45);
+  filter: blur(8px);
+}
+
+.node-circle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #140326;
+  border: 2px solid var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .node-circle {
+  transform: scale(1.15);
+  border-color: #ffffff;
+}
+
+/* Card Content */
+.timeline-card {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(168, 85, 247, 0.35);
+}
+
+.timeline-date-badge {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f3e8ff;
+  background: rgba(168, 85, 247, 0.18);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+}
+
+.timeline-item-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.timeline-item-desc {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.75;
+}
+
+/* Responsive adjustment for Mobile screens */
+@media (max-width: 768px) {
+  .timeline-center-line {
+    left: 28px;
+  }
+
+  .timeline-node {
+    left: 28px;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    padding-left: 70px;
+    padding-right: 0;
+    justify-content: flex-start;
+    transform: translateY(30px);
+  }
+
+  .timeline-item.timeline-visible {
+    transform: translateY(0);
+  }
+
+  .timeline-card {
+    padding: 22px 18px;
+  }
+}

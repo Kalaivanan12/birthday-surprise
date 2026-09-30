@@ -1,0 +1,233 @@
+/* ==========================================================================
+   MEMORIES POLAROID GALLERY STYLING (WHITE & PURPLE THEME)
+   ========================================================================== */
+
+.memories-section {
+  position: relative;
+}
+
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 36px 28px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+.polaroid-card {
+  background: #ffffff;
+  padding: 14px 14px 22px 14px;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 16px rgba(168, 85, 247, 0.2);
+  transform: rotate(var(--rotate-deg, 0deg));
+  transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s ease, z-index 0.1s;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+}
+
+.polaroid-card:hover {
+  transform: scale(1.08) rotate(0deg) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 35px rgba(168, 85, 247, 0.65);
+  z-index: 10;
+}
+
+.polaroid-pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(22, 4, 40, 0.95);
+  padding: 4px;
+  border-radius: 50%;
+  border: 1px solid #c084fc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polaroid-image-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #111111;
+  border-radius: 2px;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.polaroid-card:hover .polaroid-img {
+  transform: scale(1.06);
+}
+
+.polaroid-caption {
+  margin-top: 14px;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1b0433;
+  letter-spacing: 0.5px;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   FULLSCREEN LIGHTBOX MODAL
+   ========================================================================== */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 2, 12, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.4);
+  background: #000000;
+}
+
+.lightbox-image {
+  max-width: 85vw;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 12px 12px 0 0;
+  animation: fadeUp 0.3s ease;
+}
+
+.lightbox-caption-bar {
+  width: 100%;
+  background: rgba(20, 5, 36, 0.92);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(216, 180, 254, 0.2);
+}
+
+.lightbox-caption-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.lightbox-counter {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--soft-pink);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  background: rgba(168, 85, 247, 0.25);
+  border: 1px solid var(--pink);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-close-btn:hover {
+  background: var(--pink);
+  transform: scale(1.1);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 5, 36, 0.85);
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--pink);
+  border-color: var(--white);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+  left: -70px;
+}
+
+.next-btn {
+  right: -70px;
+}
+
+@media (max-width: 768px) {
+  .polaroid-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 14px;
+  }
+  .polaroid-card {
+    padding: 10px 10px 16px 10px;
+  }
+  .polaroid-caption {
+    font-size: 1.25rem;
+  }
+  .prev-btn {
+    left: 10px;
+  }
+  .next-btn {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaroid-grid {
+    grid-template-columns: 1fr;
+  }
+}

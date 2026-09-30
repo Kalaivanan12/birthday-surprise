@@ -1,0 +1,255 @@
+/* ==========================================================================
+   HERO SECTION STYLING (WHITE & PURPLE THEME)
+   ========================================================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 24px 80px;
+  background: radial-gradient(circle at 50% 30%, #20053e 0%, #0e021c 50%, #06020c 100%);
+}
+
+.hero-ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.glow-top {
+  width: 450px;
+  height: 450px;
+  background: rgba(168, 85, 247, 0.28);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.glow-bottom {
+  width: 350px;
+  height: 350px;
+  background: rgba(59, 7, 100, 0.55);
+  bottom: 5%;
+  right: 15%;
+}
+
+.hero-container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeUp 1.2s ease-out;
+  transition: transform 0.1s linear;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(168, 85, 247, 0.18);
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  border-radius: 30px;
+  color: #f3e8ff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-badge-icon {
+  color: #c084fc;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.hero-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(3rem, 7.5vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.gradient-text {
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 35%, #c084fc 70%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
+}
+
+/* Rotating Nickname Animation */
+.rotating-nickname-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.rotating-nickname {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.nickname-enter {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.nickname-exit {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.96);
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  color: var(--soft-pink);
+  max-width: 650px;
+  margin: 0 auto 45px;
+  line-height: 1.7;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.hero-subtitle span {
+  color: var(--white);
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* Glowing Circular Image Frame */
+.hero-photo-wrapper {
+  position: relative;
+  width: 270px;
+  height: 270px;
+  margin: 10px auto 50px;
+}
+
+.hero-photo-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ring-outer {
+  border: 2px dashed rgba(192, 132, 252, 0.5);
+  animation: spinSlow 20s linear infinite;
+}
+
+.ring-inner {
+  inset: -6px;
+  border: 2px solid rgba(243, 232, 255, 0.65);
+  box-shadow: 0 0 32px rgba(168, 85, 247, 0.7), inset 0 0 16px rgba(168, 85, 247, 0.4);
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.hero-photo-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 4px solid var(--white);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85), 0 0 35px rgba(168, 85, 247, 0.55);
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s ease;
+}
+
+.hero-photo-container:hover .hero-photo {
+  transform: scale(1.08);
+}
+
+/* Decorative floating badges */
+.floating-badge {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(26, 6, 46, 0.88);
+  border: 1px solid #c084fc;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(168, 85, 247, 0.5);
+}
+
+.badge-1 {
+  top: 10px;
+  left: -15px;
+  animation: gentleFloat 4s infinite ease-in-out;
+}
+
+.badge-2 {
+  bottom: 15px;
+  right: -15px;
+  animation: gentleFloat 5s infinite ease-in-out 1s;
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(243, 232, 255, 0.7);
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.mouse-icon {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(243, 232, 255, 0.6);
+  border-radius: 14px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mouse-wheel {
+  width: 4px;
+  height: 8px;
+  background: #c084fc;
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  animation: scrollWheel 2s infinite ease;
+}
+
+@keyframes scrollWheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-photo-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+}

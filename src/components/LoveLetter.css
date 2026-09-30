@@ -1,0 +1,163 @@
+/* ==========================================================================
+   LOVE LETTER COMPONENT STYLING (WHITE & PURPLE THEME)
+   ========================================================================== */
+
+.love-letter-section {
+  position: relative;
+}
+
+.letter-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.letter-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, transparent 70%);
+  filter: blur(25px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.letter-card {
+  position: relative;
+  z-index: 1;
+  padding: 50px 48px;
+  background: rgba(28, 7, 50, 0.72);
+  border: 1px solid rgba(216, 180, 254, 0.32);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(168, 85, 247, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.letter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(216, 180, 254, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 35px;
+}
+
+.letter-icon-feather {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(192, 132, 252, 0.4);
+}
+
+.letter-date {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--soft-pink);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.letter-content {
+  min-height: 240px;
+  margin-bottom: 40px;
+}
+
+/* =========================================================
+   LOVE LETTER PARAGRAPHS FONT CONFIGURATION
+   ========================================================= */
+.typewriter-text {
+  /*
+   * You can easily change this font to any of these:
+   * 1. 'Dancing Script', cursive;     (Romantic handwritten love letter)
+   * 2. 'Caveat', cursive;             (Casual handwritten letter)
+   * 3. 'Cormorant Garamond', serif;   (Elegant literary book style)
+   * 4. 'Playfair Display', serif;     (Luxury editorial serif)
+   * 5. 'Montserrat', sans-serif;      (Clean modern readable)
+   */
+  font-family: 'Dancing Script', 'Cormorant Garamond', cursive, serif;
+  font-size: clamp(1.3rem, 2.7vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.95;
+  color: #ffffff;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-style: normal;
+  letter-spacing: 0.3px;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: #c084fc;
+  font-weight: 700;
+  animation: blinkCursor 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.letter-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(216, 180, 254, 0.2);
+  padding-top: 25px;
+}
+
+/* =========================================================
+   LOVE LETTER SIGNATURE FONT CONFIGURATION
+   ========================================================= */
+.letter-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.letter-signature span {
+  /* Font for "Forever & Always Yours," */
+  font-family: 'Dancing Script', 'Cormorant Garamond', cursive, serif;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  color: var(--soft-pink);
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.signature-name {
+  /* Font for "Your Love ❤️" */
+  font-family: 'Dancing Script', 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 4vw, 2.7rem);
+  font-weight: 700;
+  color: #c084fc;
+  text-shadow: 0 0 25px rgba(168, 85, 247, 0.65);
+}
+
+.wax-seal {
+  width: 55px;
+  height: 55px;
+  background: radial-gradient(circle, #c084fc 0%, #7e22ce 70%, #3b0764 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.65);
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .letter-card {
+    padding: 30px 20px;
+  }
+  .typewriter-text {
+    line-height: 1.7;
+  }
+  .signature-name {
+    font-size: 1.8rem;
+  }
+}

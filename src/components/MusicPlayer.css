@@ -1,0 +1,264 @@
+/* ==========================================================================
+   MUSIC PLAYER STYLING (WHITE & PURPLE THEME)
+   ========================================================================== */
+
+.music-player-wrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  max-width: 380px;
+  width: calc(100vw - 48px);
+}
+
+.music-player-wrapper.player-collapsed {
+  transform: translateY(calc(100% - 46px));
+}
+
+.music-player-card {
+  position: relative;
+  padding: 16px 20px 18px;
+  background: rgba(20, 4, 38, 0.92);
+  border: 1px solid rgba(192, 132, 252, 0.38);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(168, 85, 247, 0.3);
+  border-radius: 20px;
+}
+
+.player-collapse-toggle {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #230644;
+  border: 1px solid #c084fc;
+  color: var(--white);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: var(--transition-smooth);
+}
+
+.player-collapse-toggle:hover {
+  background: var(--pink);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.player-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Vinyl Album Art */
+.album-art-container {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #c084fc;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.45);
+  flex-shrink: 0;
+}
+
+.album-art-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #1a052e;
+}
+
+.art-spinning {
+  animation: spinSlow 10s linear infinite;
+}
+
+/* Player Info */
+.player-info-section {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.player-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.player-song-info {
+  min-width: 0;
+}
+
+.song-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.5px;
+}
+
+.song-artist {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--soft-pink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Equalizer Bars */
+.audio-equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+  padding: 0 4px;
+}
+
+.eq-bar {
+  width: 3px;
+  background: #c084fc;
+  border-radius: 2px;
+  height: 4px;
+  transition: height 0.2s ease;
+}
+
+.equalizer-active .bar-1 { animation: eqBounce 0.7s infinite alternate ease-in-out; }
+.equalizer-active .bar-2 { animation: eqBounce 0.9s infinite alternate 0.2s ease-in-out; }
+.equalizer-active .bar-3 { animation: eqBounce 0.6s infinite alternate 0.4s ease-in-out; }
+.equalizer-active .bar-4 { animation: eqBounce 0.8s infinite alternate 0.1s ease-in-out; }
+
+@keyframes eqBounce {
+  0% { height: 4px; }
+  100% { height: 18px; }
+}
+
+/* Progress Bar */
+.player-progress-container {
+  margin-bottom: 10px;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7e22ce, #c084fc);
+  border-radius: 4px;
+  position: relative;
+  pointer-events: none;
+}
+
+.player-timers {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: rgba(243, 232, 255, 0.75);
+  margin-top: 4px;
+}
+
+/* Controls Row */
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.player-play-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #6b21a8);
+  border: none;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.45);
+  transition: var(--transition-smooth);
+}
+
+.player-play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.65);
+}
+
+.volume-control-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume-mute-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 75px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+  cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #c084fc;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.85);
+}
+
+@media (max-width: 480px) {
+  .music-player-wrapper {
+    bottom: 14px;
+    right: 14px;
+    width: calc(100vw - 28px);
+  }
+  .album-art-container {
+    width: 52px;
+    height: 52px;
+  }
+}

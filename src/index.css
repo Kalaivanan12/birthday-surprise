@@ -1,0 +1,262 @@
+/* ==========================================================================
+   GLOBAL STYLES & ROMANTIC WHITE & PURPLE THEME
+   ========================================================================== */
+
+:root {
+  --black: #06020c;
+  --burgundy: #1a052e;
+  --dark-red: #3b0764;
+  --pink: #a855f7;       /* Royal Vibrant Purple */
+  --soft-pink: #e9d5ff;  /* Soft Dreamy Lavender */
+  --white: #ffffff;      /* Pure Crisp White */
+
+  /* Dedicated Purple Palette Helpers */
+  --purple-deep: #160329;
+  --purple-royal: #7e22ce;
+  --purple-vibrant: #a855f7;
+  --purple-light: #c084fc;
+  --purple-lavender: #f3e8ff;
+
+  /* Helper RGBA variables for glassmorphism & purple glows */
+  --bg-gradient: radial-gradient(circle at 50% 20%, #1e053a 0%, #0e021c 45%, #06020c 100%);
+  --glass-bg: rgba(28, 7, 50, 0.52);
+  --glass-border: rgba(216, 180, 254, 0.28);
+  --glass-glow: 0 8px 32px 0 rgba(168, 85, 247, 0.22);
+  --purple-glow: 0 0 28px rgba(168, 85, 247, 0.65);
+
+  /* Unified Romantic Font Typography Across Entire Project */
+  --font-serif: 'Dancing Script', 'Playfair Display', cursive, serif;
+  --font-cursive: 'Dancing Script', 'Great Vibes', cursive;
+  --font-romantic: 'Dancing Script', cursive;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--white);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+}
+
+/* Custom romantic purple scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080210;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--dark-red), var(--pink));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-light);
+}
+
+/* Selection highlight */
+::selection {
+  background: var(--pink);
+  color: var(--white);
+}
+
+/* Reusable Keyframe Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(59, 7, 100, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(192, 132, 252, 0.8), 0 0 60px rgba(168, 85, 247, 0.5);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Common Section Container Styling */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--purple-light);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-romantic);
+  font-size: clamp(2.5rem, 6vw, 3.8rem);
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0 2px 25px rgba(168, 85, 247, 0.55);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  color: var(--soft-pink);
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.95;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Buttons in Purple & White */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 50%, #3b0764 100%);
+  color: var(--white);
+  border: 1px solid rgba(243, 232, 255, 0.4);
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.45);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #c084fc 0%, #9333ea 50%, #4c1d95 100%);
+  box-shadow: 0 15px 45px rgba(168, 85, 247, 0.7);
+  border-color: #ffffff;
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Glassmorphism Card Utility */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
+  border-radius: 20px;
+}
+
+/* Ambient Floating Hearts Container */
+.floating-hearts-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-heart-item {
+  position: absolute;
+  bottom: -40px;
+  color: var(--purple-light);
+  opacity: 0;
+  animation: floatHeart 10s infinite linear;
+  user-select: none;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+}
