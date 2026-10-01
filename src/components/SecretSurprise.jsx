@@ -51,8 +51,8 @@ export default function SecretSurprise() {
               <span className="burst-heart h-1">💜</span>
               <span className="burst-heart h-2">✨</span>
               <span className="burst-heart h-3">🤍</span>
-              <span className="burst-heart h-4">💜</span>
-              <span className="burst-heart h-5">💫</span>
+              <span className="burst-heart h-4">💖</span>
+              <span className="burst-heart h-5">❤️</span>
             </div>
 
             <div className="secret-unlocked-badge">

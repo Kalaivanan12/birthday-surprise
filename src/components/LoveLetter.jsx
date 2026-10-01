@@ -12,15 +12,23 @@ export default function LoveLetter() {
   // EDITABLE LOVE LETTER PARAGRAPHS HERE
   // ==========================================
   const paragraphs = [
-   "I don't know exactly when it happened, but somewhere between our conversations, our silly moments, and the memories we created, you became a part of my heart that I never want to lose.",
-   "You are more than just someone I love. You are the person I look for when I want to share something, the person I think about when I smile for no reason, and the person who can make an ordinary day feel incredibly special.",
-   "There are so many things I love about you — your smile, your voice, your laugh, the way you care, the little things you do without even realizing how much they mean to me. But more than anything, I love the feeling of being loved by you.",
-   "If I could give you one thing in this world, I would give you the ability to see yourself through my eyes, even for a moment. Then you would understand just how beautiful, precious, and irreplaceable you are to me.",
-   "I don't want to be there only for your birthdays or your happiest moments. I want to be there for the quiet days, the difficult days, the crazy days, and all the ordinary days in between. I want to make memories with you that we'll look back on years from now and smile about.",
-   "No matter how many birthdays come and go, I hope I get to celebrate every single one of them beside you. I want to see your smile, hear your laugh, annoy you a little, make you happy, and remind you again and again how deeply you are loved.",
-   "Today is your birthday, but honestly, I feel like I'm the lucky one — because the world gave me you. ❤️",
-   "Happiest Birthday, my love. You are my favorite person, my happiest thought, my safest place, and one of the most beautiful parts of my life.",
-   "I love you more than I know how to put into words. And if forever is real, I hope mine has you in it. ❤️"
+   "I don't know exactly when it happened, but somewhere between our conversations, our silly moments, and all the memories we created, you became a part of my heart that I never want to lose. 🥹❤️",
+
+  "You are more than just someone I love. You are the person I look for when I want to share something, the person I think about when I smile for no reason, and the person who can make an ordinary day feel incredibly special. 🫶✨",
+
+  "There are so many things I love about you — your smile 😊, your voice 🎶, your laugh 😂, the way you care 🥹, and all those little things you do without even realizing how much they mean to me. But more than anything, I love the feeling of being loved by you. ❤️",
+
+  "If I could give you one thing in this world, I would give you the ability to see yourself through my eyes, even for a moment. 👀❤️ Then you would understand just how beautiful, precious, and irreplaceable you are to me. 🥺✨",
+
+  "I don't want to be there only for your birthdays 🎂 or your happiest moments. I want to be there for the quiet days, the difficult days, the crazy days, and all the ordinary days in between. 🤝❤️ I want to make memories with you that we'll look back on years from now and smile about. 🥰",
+
+  "No matter how many birthdays come and go 🎂✨, I hope I get to celebrate every single one of them beside you. ❤️ I want to see your smile, hear your laugh, annoy you a little 😜, make you happy, and remind you again and again how deeply you are loved. 💕",
+
+  "Today is your birthday 🎂❤️, but honestly, I feel like I'm the lucky one — because the world gave me you. 🌎💝",
+
+  "Happiest Birthday, my love. 🎂🥳❤️ You are my favorite person, my happiest thought, my safest place, and one of the most beautiful parts of my life. 🫂✨",
+
+  "I love you more than I know how to put into words. ❤️ And if forever is real, I hope mine has you in it. ♾️🥹💕"
   ];
 
   const fullText = paragraphs.join("\n\n");
